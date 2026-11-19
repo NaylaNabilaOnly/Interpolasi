@@ -1,0 +1,21 @@
+import numpy as np
+from scipy.interpolate import lagrange
+
+print("=" * 60)
+print("IMPELEMNTASI INTERPOLASI (LAGRANGE POLINOMIAL)")
+
+##INPUT DATA MENTAH
+x = np.array([20.0, 50.0, 80.0], dtype=float)
+y = np.array([45.0, 80.0, 95.0], dtype=float)
+
+#menghitung nilai interpolasi
+poly_lagrenge = lagrange(x, y)
+
+#menghitung nilai yang di cari
+x_target = 60
+y_pred = poly_lagrenge(x_target)
+
+print(f"Nilai data x: {x} ")
+print(f"Nilai data y: {y} ")
+print(f"Persamaan Polinomial Lagrange\n{poly_lagrenge}")
+print(f"Hasil interpolasi untuk x = {x_target} adalah y = {y_pred:.5f}")
